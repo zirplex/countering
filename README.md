@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/JimTouz/counter-strike-docker.svg?branch=master)](https://travis-ci.org/JimTouz/counter-strike-docker)
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/JimTouz/counter-strike-docker/blob/master/LICENSE)
+
+
 
 
 # Docker image for Counter Strike 1.6 Dedicated Server
