@@ -1,7 +1,5 @@
 FROM debian:jessie
 
-LABEL maintainer "Artem Panchenko <kazar.artem@gmail.com>"
-
 ARG steam_user=anonymous
 ARG steam_password=
 ARG metamod_version=1.20

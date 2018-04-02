@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/JimTouz/counter-strike-docker.svg?branch=master)](https://travis-ci.org/JimTouz/counter-strike-docker)
+
+
 
 # Docker image for Counter Strike 1.6 Dedicated Server
 
