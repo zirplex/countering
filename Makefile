@@ -48,6 +48,7 @@ test-stop-server:
 
 .PHONY: test-smoke
 test-smoke: test-start-server
+	chmod +x tests/smoke.py
 	tests/smoke.py
 
 .PHONY: test-clean
