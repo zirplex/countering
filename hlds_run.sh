@@ -29,6 +29,14 @@ if [ -z "${RESTART_ON_FAIL}" ]; then
     OPTIONS+=('-norestart')
 fi
 
+if [ -n "${SERVER_PASSWORD}" ]; then
+    OPTIONS+=("+sv_password" "${SERVER_PASSWORD}")
+fi
+
+if [ -n "${RCON_PASSWORD}" ]; then
+    OPTIONS+=("+rcon_password" "${RCON_PASSWORD}")
+fi
+
 if [ -n "${ADMIN_STEAM}" ]; then
     echo "\"STEAM_${ADMIN_STEAM}\" \"\"  \"abcdefghijklmnopqrstu\" \"ce\"" >> "/opt/hlds/cstrike/addons/amxmodx/configs/users.ini"
 fi
