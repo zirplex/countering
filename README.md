@@ -28,8 +28,8 @@ docker run -d -p 26900:26900/udp -p 27020:27020/udp -p 27015:27015/udp -p 27015:
 | `FRIENDLY_FIRE` | Enable or disable the friendly fire. (*off: 0, on: 1*) | `1` |
 | `SERVER_PASSWORD` | The server password. (*Empty for no server password*) | None |
 | `RCON_PASSWORD` | The rcon password. (*Empty for no rcon password*) | None |
-| `ADMIN_STEAM` | *TBD - amx mod related*| *TBD* |
 | `RESTART_ON_FAIL` | *TBD* | *TBD* |
+| `ADMIN_STEAM` | *TBD - amx mod related*| *TBD* |
 
 ## Stop the server
 
