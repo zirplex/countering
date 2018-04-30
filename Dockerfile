@@ -5,7 +5,7 @@ ARG steam_password=
 ARG metamod_version=1.20
 ARG amxmod_version=1.8.2
 
-RUN apt update && apt install -y lib32gcc1 curl
+RUN apt update && apt install -y lib32gcc1 curl unzip
 
 # Install SteamCMD
 RUN mkdir -p /opt/steam && cd /opt/steam && \
@@ -48,8 +48,13 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
+ADD files/podbot_full_V3B22.zip /opt/hlds/cstrike/addons/podbot_full_V3B22.zip
+RUN unzip /opt/hlds/cstrike/addons/podbot_full_V3B22.zip
+RUN echo "addons/podbot/podbot_mm_i386.so" >> /opt/hlds/cstrike/addons/metamod/plugins.ini
+RUN rm /opt/hlds/cstrike/addons/podbot_full_V3B22.zip
+
 # Cleanup
-RUN apt remove -y curl
+RUN apt remove -y curl unzip
 
 WORKDIR /opt/hlds
 
