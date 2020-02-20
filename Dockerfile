@@ -50,7 +50,7 @@ ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
 # Add CSDM
 RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/configs/csdm
-ADD csdm/* /opt/hlds/cstrike/addons//amxmodx/configs/csdm
+ADD csdm/* /opt/hlds/cstrike/addons/amxmodx/configs/csdm/
 
 COPY csdm.cfg /opt/hlds/cstrike/addons/amxmodx/configs/
 COPY plugins-csdm.ini /opt/hlds/cstrike/addons/amxmodx/configs/
