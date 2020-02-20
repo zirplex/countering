@@ -42,10 +42,17 @@ ADD files/plugins.ini /opt/hlds/cstrike/addons/metamod/plugins.ini
 COPY podbot /opt/hlds/cstrike/addons/podbot
 RUN echo "linux addons/podbot/podbot_mm_i386.so" > opt/hlds/cstrike/addons/metamod/plugins.ini
 
+
 # Install AMX mod X
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
+
+# Add CSDM
+COPY modules /opt/hlds/cstrike/addons/amxmodx/
+COPY configs /opt/hlds/cstrike/addons/amxmodx/
+COPY plugins /opt/hlds/cstrike/addons/amxmodx/
+COPY scripting /opt/hlds/cstrike/addons/amxmodx/
 
 # Cleanup
 RUN apt remove -y curl
