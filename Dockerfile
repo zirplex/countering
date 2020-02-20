@@ -49,9 +49,12 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-li
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
 # Add CSDM
-COPY csdm /opt/hlds/cstrike/addons/amxmodx/configs/
+RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/configs/csdm
+ADD csdm/* /opt/hlds/cstrike/addons//amxmodx/configs/csdm
+
 COPY csdm.cfg /opt/hlds/cstrike/addons/amxmodx/configs/
 COPY plugins-csdm.ini /opt/hlds/cstrike/addons/amxmodx/configs/
+
 COPY csdm_amxx_i386.so /opt/hlds/cstrike/addons/amxmodx/modules/
 COPY csdm_amxx.dll /opt/hlds/cstrike/addons/amxmodx/modules/
 COPY src /opt/hlds/cstrike/addons/amxmodx/modules/
@@ -67,8 +70,8 @@ COPY csdm_spawn_preset.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY csdm_stripper.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY csdm_tickets.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 
-
-COPY scripting /opt/hlds/cstrike/addons/amxmodx/
+RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/scripting
+ADD scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting
 
 
 # Cleanup
