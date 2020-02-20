@@ -57,7 +57,8 @@ COPY plugins-csdm.ini /opt/hlds/cstrike/addons/amxmodx/configs/
 
 COPY csdm_amxx_i386.so /opt/hlds/cstrike/addons/amxmodx/modules/
 COPY csdm_amxx.dll /opt/hlds/cstrike/addons/amxmodx/modules/
-COPY src /opt/hlds/cstrike/addons/amxmodx/modules/
+RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/modules/src
+ADD src/* /opt/hlds/cstrike/addons/amxmodx/modules/src
 
 
 COPY csdm_equip.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
