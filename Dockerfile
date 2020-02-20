@@ -67,19 +67,8 @@ COPY csdm_spawn_preset.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY csdm_stripper.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY csdm_tickets.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 
-COPY csdm_equip.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_ffa.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_itemmode.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_main.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_misc.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_protection.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_spawn_preset.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_stop_respawn.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_stripper.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm_tickets.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
-COPY csdm.inc /opt/hlds/cstrike/addons/amxmodx/scripting/include/
 
-
+COPY scripting /opt/hlds/cstrike/addons/amxmodx/
 
 
 # Cleanup
