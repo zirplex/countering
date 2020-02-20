@@ -41,6 +41,8 @@ ADD files/plugins.ini /opt/hlds/cstrike/addons/metamod/plugins.ini
 # Add bots
 COPY podbot /opt/hlds/cstrike/addons/podbot
 RUN echo "linux addons/podbot/podbot_mm_i386.so" > opt/hlds/cstrike/addons/metamod/plugins.ini
+RUN echo "linux addons/amxmodx/dlls/amxmodx_mm_i386.so" > opt/hlds/cstrike/addons/metamod/plugins.ini
+ 
 
 # Install AMX mod X
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
