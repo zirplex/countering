@@ -71,7 +71,7 @@ COPY csdm_spawn_preset.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY csdm_stripper.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY csdm_tickets.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
 
-ADD scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting
+ADD scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting/
 
 
 # Cleanup
