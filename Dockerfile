@@ -49,10 +49,38 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-li
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
 # Add CSDM
-COPY modules /opt/hlds/cstrike/addons/amxmodx/
-COPY configs /opt/hlds/cstrike/addons/amxmodx/
-COPY plugins /opt/hlds/cstrike/addons/amxmodx/
-COPY scripting /opt/hlds/cstrike/addons/amxmodx/
+COPY csdm /opt/hlds/cstrike/addons/amxmodx/configs/
+COPY csdm.cfg /opt/hlds/cstrike/addons/amxmodx/configs/
+COPY plugins-csdm.ini /opt/hlds/cstrike/addons/amxmodx/configs/
+COPY csdm_amxx_i386.so /opt/hlds/cstrike/addons/amxmodx/modules/
+COPY csdm_amxx.dll /opt/hlds/cstrike/addons/amxmodx/modules/
+COPY src /opt/hlds/cstrike/addons/amxmodx/modules/
+
+
+COPY csdm_equip.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_ffa.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_itemmode.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_main.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_misc.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_protection.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_spawn_preset.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_stripper.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY csdm_tickets.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
+
+COPY csdm_equip.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_ffa.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_itemmode.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_main.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_misc.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_protection.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_spawn_preset.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_stop_respawn.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_stripper.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm_tickets.sma /opt/hlds/cstrike/addons/amxmodx/scripting/
+COPY csdm.inc /opt/hlds/cstrike/addons/amxmodx/scripting/include/
+
+
+
 
 # Cleanup
 RUN apt remove -y curl
