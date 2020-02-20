@@ -38,10 +38,9 @@ ADD files/liblist.gam /opt/hlds/cstrike/liblist.gam
 # Remove this line if you aren't going to install/use amxmodx and dproto
 ADD files/plugins.ini /opt/hlds/cstrike/addons/metamod/plugins.ini
 
-# Install dproto
-RUN mkdir -p /opt/hlds/cstrike/addons/dproto
-ADD files/dproto_i386.so /opt/hlds/cstrike/addons/dproto/dproto_i386.so
-ADD files/dproto.cfg /opt/hlds/cstrike/dproto.cfg
+# Add bots
+COPY podbot /opt/hlds/cstrike/addons/podbot
+RUN echo "linux addons/podbot/podbot_mm_i386.so" > opt/hlds/cstrike/addons/metamod/plugins.ini
 
 # Install AMX mod X
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
