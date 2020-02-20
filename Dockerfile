@@ -41,40 +41,17 @@ ADD files/plugins.ini /opt/hlds/cstrike/addons/metamod/plugins.ini
 # Add bots
 COPY podbot /opt/hlds/cstrike/addons/podbot
 RUN echo "linux addons/podbot/podbot_mm_i386.so" > opt/hlds/cstrike/addons/metamod/plugins.ini
-RUN echo "linux addons/amxmodx/modules/csdm_amxx_i386.so" > opt/hlds/cstrike/addons/metamod/plugins.ini
-
 
 # Install AMX mod X
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
-# Add CSDM
-RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/configs/csdm
-ADD csdm/* /opt/hlds/cstrike/addons/amxmodx/configs/csdm/
 
-COPY csdm.cfg /opt/hlds/cstrike/addons/amxmodx/configs/
-COPY plugins-csdm.ini /opt/hlds/cstrike/addons/amxmodx/configs/
-
-COPY csdm_amxx_i386.so /opt/hlds/cstrike/addons/amxmodx/modules/
-COPY csdm_amxx.dll /opt/hlds/cstrike/addons/amxmodx/modules/
-RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/modules/src
-ADD src/* /opt/hlds/cstrike/addons/amxmodx/modules/src/
-
-
-COPY csdm_equip.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_ffa.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_itemmode.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_main.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_misc.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_protection.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_spawn_preset.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_stripper.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-COPY csdm_tickets.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/
-
-RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/scripting
-ADD scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting/
-
+ADD configs/* /opt/hlds/cstrike/addons/amxmodx/
+ADD modules/* /opt/hlds/cstrike/addons/amxmodx/
+ADD plugins/* /opt/hlds/cstrike/addons/amxmodx/
+ADD scripting/* /opt/hlds/cstrike/addons/amxmodx/
 
 # Cleanup
 RUN apt remove -y curl
