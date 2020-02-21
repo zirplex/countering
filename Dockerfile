@@ -42,9 +42,6 @@ ADD files/plugins.ini /opt/hlds/cstrike/addons/metamod/plugins.ini
 COPY podbot /opt/hlds/cstrike/addons/podbot
 
 
-
-
-
 # Install AMX mod X
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
@@ -55,6 +52,8 @@ COPY configs/* /opt/hlds/cstrike/addons/amxmodx/configs/
 COPY modules/* /opt/hlds/cstrike/addons/amxmodx/modules/
 COPY plugins/* /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting/
+
+RUN   echo "amx_gore_ultimate.amxx ;" >> /opt/hlds/cstrike/addons/amxmodx/configs/plugins.ini
 
 # Cleanup
 RUN apt remove -y curl
