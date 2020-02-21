@@ -47,7 +47,7 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-base-linux
 RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-linux.tar.gz" | tar -C /opt/hlds/cstrike/ -zxvf -
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
-COPYfiles/amx_gore_ultimate.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/amx_gore_ultimate.amxx
+COPY files/amx_gore_ultimate.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/amx_gore_ultimate.amxx
 
 
 COPY configs/* /opt/hlds/cstrike/addons/amxmodx/configs/
