@@ -56,6 +56,9 @@ COPY plugins/* /opt/hlds/cstrike/addons/amxmodx/plugins/
 COPY scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting/
 
 RUN   echo "amx_gore_ultimate.amxx ;" >> /opt/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+RUN   echo "multijump.amxx ;" >> /opt/hlds/cstrike/addons/amxmodx/configs/plugins.ini
+
+
 
 # Cleanup
 RUN apt remove -y curl
