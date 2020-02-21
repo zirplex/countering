@@ -50,10 +50,10 @@ RUN curl -sqL "http://www.amxmodx.org/release/amxmodx-$amxmod_version-cstrike-li
 ADD files/maps.ini /opt/hlds/cstrike/addons/amxmodx/configs/maps.ini
 
 
-ADD configs/* /opt/hlds/cstrike/addons/amxmodx/
-ADD modules/* /opt/hlds/cstrike/addons/amxmodx/
-ADD plugins/* /opt/hlds/cstrike/addons/amxmodx/
-ADD scripting/* /opt/hlds/cstrike/addons/amxmodx/
+COPY configs/* /opt/hlds/cstrike/addons/amxmodx/configs/
+COPY modules/* /opt/hlds/cstrike/addons/amxmodx/modules/
+COPY plugins/* /opt/hlds/cstrike/addons/amxmodx/plugins/
+COPY scripting/* /opt/hlds/cstrike/addons/amxmodx/scripting/
 
 # Cleanup
 RUN apt remove -y curl
