@@ -51,6 +51,8 @@ COPY files/amx_gore_ultimate.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/amx_g
 COPY files/amx_parachute.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/amx_parachute.amxx
 COPY files/f_ultimate_sounds.amxx /opt/hlds/cstrike/addons/amxmodx/plugins/f_ultimate_sounds.amxx
 
+COPY files/parachute.mdl /opt/hlds/cstrike/models/parachute.mdl
+
 RUN mkdir -p /opt/hlds/cstrike/sound/misc/female
 RUN mkdir -p /opt/hlds/cstrike/addons/amxmodx/configs/csdm
 
